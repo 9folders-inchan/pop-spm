@@ -3,7 +3,7 @@
 
 cwd="$(dirname "${BASH_SOURCE[0]}")"
 WORK_DIR="$(mktemp -d)"
-#trap 'rm -rf "$WORK_DIR"' EXIT
+trap 'rm -rf "$WORK_DIR"' EXIT
 
 RELEASE_VERSION=$1
 RELEASE_NOTE=$2
@@ -81,10 +81,11 @@ done
 if [ ! -f Package.swift ]; then
   touch Package.swift
 fi
-./scripts/format_Package.swift.sh "$XCFRAMEWORK_NAME" "$BINARY_TARGETS" > Package.swift
+./scripts/format_Package.swift.sh "$SCHEME_NAME" "$BINARY_TARGETS" > Package.swift
 
 # 7. Commit
-git add Package.swift
+#git add Package.swift
+git add .
 git commit -m "New $XCFRAMEWORK_NAME.xcframework version $RELEASE_VERSION"
 git tag -m "$RELEASE_NOTE" "$RELEASE_VERSION"
 git push origin master

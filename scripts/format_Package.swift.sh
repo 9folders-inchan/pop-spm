@@ -21,10 +21,6 @@ let package = Package(
     ],
     targets: [
         ${BINARY_TARGETS}
-        .target(
-            name: "${MODULE_NAME}",
-            dependencies: ["MaterialComponents", "MDFInternationalization", "MDFTextAccessibility"]
-        )
     ]
 )
 EOF
