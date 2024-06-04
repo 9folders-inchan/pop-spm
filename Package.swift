@@ -17,8 +17,8 @@ let package = Package(
         
 		.binaryTarget( 
             name: "pop",
-            url: "https://github.com/9folders-inchan/pop-spm/releases/download//pop.xcframework.zip",
-            checksum: "1711dcc0f36c3fcf1b77d7fe472d309912eda8f6d326d579e20156c29601a50a" 
+            url: "https://github.com/9folders-inchan/pop-spm/releases/download/0.0.1/pop.xcframework.zip",
+            checksum: "412e3a240b5b55f2a678471c3b623b472a65f1c36fffa4777cdd0899724ce967" 
         ), 
         .target(
             name: "pop-spm",
